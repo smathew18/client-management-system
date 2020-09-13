@@ -2,9 +2,9 @@
 {% load crispy_forms_tags %}
 {% block content %}
     <h1>New Client</h1>
-    <form action="" method="post" class="col-lg-2">{% csrf_token %}
+    <form action="" method="post" class="md-8">
         {% csrf_token %}
       {{ form|crispy }}<br>
-      <button class="btn btn-success ml-2" type="submit">Save</button>
+      <button class="btn btn-success ml-2" align="center"  type="submit">Save</button>
     </form>
 {% endblock content %}

@@ -125,6 +125,7 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
+
 EMAIL_HOST = 'smtp.gmail.com' # mail service smtp
 EMAIL_HOST_USER = 'msdprojuno2020' # email id
 EMAIL_HOST_PASSWORD = 'proj@use' #password

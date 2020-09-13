@@ -12,6 +12,21 @@ class ClientListView(LoginRequiredMixin,ListView):
     model = Client
     template_name = 'client_list.html'
 
+    def get_context_data(self, **kwargs):
+
+        context = super().get_context_data(**kwargs)
+
+        # User level Check
+        if self.request.user.is_superuser:
+
+            context['object_list'] = Client.objects.all()
+
+        else:
+            # Results based on logged in user
+            context['object_list'] = Client.objects.filter(author=self.request.user)
+
+        return context
+
 class ClientDetailView(LoginRequiredMixin,DetailView):
     model = Client
     template_name = 'client_detail.html'
